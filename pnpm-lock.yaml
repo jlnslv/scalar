@@ -953,6 +953,9 @@ importers:
       '@scalar/postman-to-openapi':
         specifier: workspace:*
         version: link:../postman-to-openapi
+      '@scalar/scripts':
+        specifier: workspace:*
+        version: link:../scripts
       '@scalar/snippetz':
         specifier: workspace:*
         version: link:../snippetz
@@ -2122,6 +2125,46 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 5.4.10(@types/node@20.17.10)(terser@5.31.2)
+
+  packages/scripts:
+    dependencies:
+      '@codemirror/lang-javascript':
+        specifier: ^6.2.3
+        version: 6.2.3
+      '@headlessui/vue':
+        specifier: ^1.7.20
+        version: 1.7.22(vue@3.5.12(typescript@5.6.2))
+      '@scalar/components':
+        specifier: workspace:*
+        version: link:../components
+      '@scalar/oas-utils':
+        specifier: workspace:*
+        version: link:../oas-utils
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.12(typescript@5.6.2)
+    devDependencies:
+      '@scalar/build-tooling':
+        specifier: workspace:*
+        version: link:../build-tooling
+      '@scalar/types':
+        specifier: workspace:*
+        version: link:../types
+      '@scalar/use-codemirror':
+        specifier: workspace:*
+        version: link:../use-codemirror
+      '@vitejs/plugin-vue':
+        specifier: 'catalog:'
+        version: 5.2.0(vite@5.4.10(@types/node@20.17.10)(terser@5.31.2))(vue@3.5.12(typescript@5.6.2))
+      '@vue/test-utils':
+        specifier: ^2.4.1
+        version: 2.4.6
+      vite:
+        specifier: ^5.1.1
+        version: 5.4.10(@types/node@20.17.10)(terser@5.31.2)
+      vite-svg-loader:
+        specifier: ^5.1.0
+        version: 5.1.0(vue@3.5.12(typescript@5.6.2))
 
   packages/snippetz:
     dependencies:
@@ -4125,6 +4168,9 @@ packages:
 
   '@codemirror/lang-javascript@6.2.2':
     resolution: {integrity: sha512-VGQfY+FCc285AhWuwjYxQyUQcYurWlxdKYT4bqwr3Twnd5wP5WSeu52t4tvvuWmljT4EmgEgZCqSieokhtY8hg==}
+
+  '@codemirror/lang-javascript@6.2.3':
+    resolution: {integrity: sha512-8PR3vIWg7pSu7ur8A07pGiYHgy3hHj+mRYRCSG8q+mPIrl0F02rgpGv+DsQTHRTc30rydOsf5PZ7yjKFg2Ackw==}
 
   '@codemirror/lang-json@6.0.1':
     resolution: {integrity: sha512-+T1flHdgpqDDlJZ2Lkil/rLiRy684WMLc74xUnjJH48GQdfJo/pudlTRreZmKwzP8/tGdKf83wlbAdOCzlJOGQ==}
@@ -21352,6 +21398,16 @@ snapshots:
       '@lezer/common': 1.2.3
       '@lezer/javascript': 1.4.17
 
+  '@codemirror/lang-javascript@6.2.3':
+    dependencies:
+      '@codemirror/autocomplete': 6.18.3(@codemirror/language@6.10.7)(@codemirror/state@6.5.0)(@codemirror/view@6.35.3)(@lezer/common@1.2.3)
+      '@codemirror/language': 6.10.7
+      '@codemirror/lint': 6.8.4
+      '@codemirror/state': 6.5.0
+      '@codemirror/view': 6.35.3
+      '@lezer/common': 1.2.3
+      '@lezer/javascript': 1.4.17
+
   '@codemirror/lang-json@6.0.1':
     dependencies:
       '@codemirror/language': 6.10.7
@@ -27702,8 +27758,8 @@ snapshots:
       '@vue/compiler-ssr': 3.5.12
       '@vue/shared': 3.5.12
       estree-walker: 2.0.2
-      magic-string: 0.30.12
-      postcss: 8.4.47
+      magic-string: 0.30.17
+      postcss: 8.5.3
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.12':
