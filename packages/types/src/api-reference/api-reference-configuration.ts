@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { ApiClientPluginSchema } from '@/api-client/api-client-plugin.ts'
 import { ApiReferencePluginSchema } from '@/api-reference/api-reference-plugin.ts'
 import { migrateThemeVariables } from '@/api-reference/helpers/migrate-theme-variables.ts'
 import type { TargetId } from '@/snippetz/index.ts'
@@ -213,6 +214,8 @@ export const apiClientConfigurationSchema = z.object({
   _integration: integrationEnum.optional(),
   /** onRequestSent is fired when a request is sent */
   onRequestSent: z.function().args(z.string()).returns(z.void()).optional(),
+  /** Plugins for the API client */
+  plugins: z.array(ApiClientPluginSchema).optional(),
 })
 
 export type ApiClientConfiguration = z.infer<typeof apiClientConfigurationSchema>
