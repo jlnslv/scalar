@@ -1,5 +1,12 @@
 # @scalar/api-reference
 
+## 1.28.28
+
+### Patch Changes
+
+- 9eb9623: feat: add unique classes to intro cards
+- 539483e: fix: displays schema name in property heading
+
 ## 1.28.27
 
 ### Patch Changes
